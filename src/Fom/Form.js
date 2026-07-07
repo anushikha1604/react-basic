@@ -24,7 +24,7 @@ export default function MyForm({ handleFormSubmit, value = '' }) {
                 onChange={handleChange} />
             {value ?
                 <button className='Button' type="submit">Edit Task</button> :
-                <button className="Button" type="submit">Add Task</button>}
+                <button className="Button" type="submit" disabled={localTask === ""}>Add Task</button>}
         </form>
     );
 }

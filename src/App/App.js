@@ -10,13 +10,14 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const handleFormSubmit = (newTask) => {
+    if (newTask === "") return;
+    if (tasks.find(item => item.task === newTask)) return;
     const newTasks = [...tasks]
     newTasks.push({ id: Date.now(), task: newTask })
     setTasks(newTasks) // {id: string/number, task: string}
   }
 
   const handleDelete = (idToDelete) => {
-    console.log('Deleting item with id:', idToDelete)
     const newTasks = tasks.filter(item => item.id !== idToDelete)
     setTasks(newTasks)
   }
