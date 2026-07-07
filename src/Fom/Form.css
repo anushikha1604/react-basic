@@ -8,3 +8,12 @@
     cursor: pointer;
     font-size: 16px;
 }
+
+
+.Input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

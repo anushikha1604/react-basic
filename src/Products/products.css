@@ -1,6 +1,8 @@
 .list {
     list-style-type: none;
     padding: 0;
+    align-items: center;
+    margin-inline-start: 5px;
 }
 
 .list-veg {
@@ -9,4 +11,22 @@
 
 .list-fruit {
     color: red;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.edit-button {
+    background-color: rgb(47, 255, 0);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
 }

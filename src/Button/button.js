@@ -1,7 +1,7 @@
-import './button.css';
+import './Button.css';
 export default function MyButton() {
 
     return (
-        <button className="Button">I'm a button</button>
+        <button className="Button">Add Task</button>
     );
 }
