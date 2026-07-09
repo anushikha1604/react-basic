@@ -1,7 +1,7 @@
 import './Form.css';
 import { useState } from 'react';
 
-export default function MyForm({ handleFormSubmit, value = '' }) {
+export default function MyForm({ handleFormSubmit, value = '', errorMsg }) {
     const [localTask, setLocalTask] = useState(value);
 
 
@@ -19,6 +19,7 @@ export default function MyForm({ handleFormSubmit, value = '' }) {
     return (
         <form className="form" onSubmit={handleSubmit}>
             <input className="Input" type="text"
+                style={errorMsg ? { border: '5px solid red' } : {}}
                 placeholder="Enter a new task..." name="taskInput"
                 value={localTask}
                 onChange={handleChange} />
