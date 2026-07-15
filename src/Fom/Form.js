@@ -1,5 +1,5 @@
 import './Form.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MyForm({ handleFormSubmit, value = '', errorMsg }) {
     const [localTask, setLocalTask] = useState(value);
@@ -15,10 +15,14 @@ export default function MyForm({ handleFormSubmit, value = '', errorMsg }) {
         setLocalTask(''); // Clear the input field after submission
     }
 
+    useEffect(() => {
+        document.getElementById('input').focus();
+    }, [])
+
 
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <input className="Input" type="text"
+            <input id="input" className="Input" type="text"
                 style={errorMsg ? { border: '5px solid red' } : {}}
                 placeholder="Enter a new task..." name="taskInput"
                 value={localTask}
