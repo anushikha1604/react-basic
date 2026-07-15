@@ -19,6 +19,10 @@ export default function MyForm({ handleFormSubmit, value = '', errorMsg }) {
   useEffect(() => {
     console.log('useEffect Form component mounted');
     inputRef.current.focus();
+    return () => {
+      console.log("Component unmount")
+      alert('ajajaj')
+    }
   }, [])
 
   useEffect(() => {
@@ -28,7 +32,7 @@ export default function MyForm({ handleFormSubmit, value = '', errorMsg }) {
     }
   }, [localTask])
 
-  console.log("1: JSX localTask", localTask)
+  // console.log("1: JSX localTask", localTask)
 
   return (
     <form className="form" onSubmit={handleSubmit}>
