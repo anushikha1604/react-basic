@@ -22,10 +22,13 @@ export default function MyForm({ handleFormSubmit, value = '', errorMsg }) {
   }, [])
 
   useEffect(() => {
-    console.log('useEffect: on monting and update', localTask);
+    console.log('3: useEffect: on monting and update', localTask);
+    return () => {
+      console.log("2: Clean up function with old value", localTask)
+    }
   }, [localTask])
 
-  console.log("JSX localTask", localTask)
+  console.log("1: JSX localTask", localTask)
 
   return (
     <form className="form" onSubmit={handleSubmit}>
